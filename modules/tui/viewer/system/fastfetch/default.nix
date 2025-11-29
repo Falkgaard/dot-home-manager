@@ -8,7 +8,7 @@
       settings = {
                     logo   = {
                                 type      = "auto"; # "nixos_small"
-                                source    = "${config.xdg.configHome}/fastfetch/os-logo.png";
+                                source    = "${config.xdg.configHome}/fetch-image";
                                 width     = 38; # NOTE: In characters.
                                 height    = 17; # NOTE: In characters.
                                 padding   = {
