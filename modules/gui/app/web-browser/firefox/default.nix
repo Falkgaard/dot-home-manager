@@ -166,8 +166,8 @@ in
             
             #preConfig   = ""; # NOTE: Add when needed.
             #extraConfig = ""; # NOTE: Add when needed.
-            # userChrome   = builtins.readFile ./gruvbox-gnomeish-userChrome.css;
-            # userContent  = builtins.readFile ./gruvbox-gnomeish-userContent.css;
+            userChrome   = builtins.readFile ./gruvbox-gnomeish-userChrome.css;
+            userContent  = builtins.readFile ./gruvbox-gnomeish-userContent.css;
             
             # userChrome   = ''
             #                  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
