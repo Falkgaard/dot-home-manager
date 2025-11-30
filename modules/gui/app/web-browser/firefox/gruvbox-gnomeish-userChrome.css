@@ -543,3 +543,7 @@ toolbarbutton[part="scrollbutton-down"] {
 .tabbrowser-tab:not([selected="true"])  {
 	opacity: 0.5;
 }
+
+#TabsToolbar:-moz-window-inactive {
+  opacity: 1 !important;
+}
