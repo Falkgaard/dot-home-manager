@@ -205,6 +205,9 @@ let
                           linewidth  = 1,
                           foreground = '#${color.base02}',
                       ),
+                      widget.Volume(
+                         emoji = True,
+                      ),
                       widget.Clock(
                          #fontsize   = 24,
                           format     = "%Y-%m-%d %a %H:%M:%S ", # NOTE: trailing space is right-padding hack
@@ -212,9 +215,6 @@ let
                           fontshadow = '#000000', #${color.base0D}',
                           padding    = 16,
                       ),
-                      # widget.Volume(
-                      #    emoji = True,
-                      # ),
                       # widget.QuickExit(),
                   ],
                   48,          # thickness (bar height)
