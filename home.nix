@@ -54,8 +54,6 @@
       modules/tui/util/feh
    ];
 
-   config.home.packages = with pkgs; [ "easyeffects" ];
-
    xdg = {
       enable          = true;
       mime.enable     = true;
@@ -97,6 +95,7 @@
    
    home.packages = with pkgs; [
       dconf
+      easyeffects
       # e.g. `pkgs.hello`
       # e.g. `(pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })`
       # e.g. `(pkgs.writeShellScriptBin "my-hello" ''
