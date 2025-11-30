@@ -33,6 +33,7 @@
       modules/gui/app/graphics/3d-general/blender
 
       modules/gui/viewer/image/qimgv
+      modules/gui/viewer/video/mpv # TODO: SVP
 
       modules/tui/terminal/kitty
       modules/tui/shell/fish
