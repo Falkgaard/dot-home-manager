@@ -54,11 +54,12 @@
       modules/tui/util/feh
    ];
 
+   config.home.packages = with pkgs; [ "easyeffects" ];
 
-  xdg = {
-     enable          = true;
-     mime.enable     = true;
-     mimeApps.enable = true;
+   xdg = {
+      enable          = true;
+      mime.enable     = true;
+      mimeApps.enable = true;
       #portal = {
       #   enable       = true;
       #  #extraPortals = pkgs.xdg-desktop-portal-kde;
