@@ -88,13 +88,12 @@
 	color:  var(--button-text-color) !important;
 }
 
-/*
 .titlebar-buttonbox-container .toolbarbutton-icon:-moz-window-inactive {
-	background-color: #48443C !important;
+	background-color: #00FF00 /*#48443C*/ !important;
 	height: 16px !important;
 	width: 16px !important;
 	color: transparent !important;
-}*/
+}
 
 :-moz-window-inactive .titlebar-buttonbox-container .toolbarbutton-text {
 	display: none
@@ -112,10 +111,9 @@
 	background-color: color-mix(in srgb, var(--toolbar-bgcolor) 60%, transparent) !important;
 }
 
-/*
 #urlbar-searchmode-switcher:-moz-window-inactive, #searchmode-switcher-chicklet:-moz-window-inactive   {
-	background-color: color-mix(in srgb, var(--toolbar-bgcolor) 20%, transparent) !important;
-}*/
+	background-color: color-mix(in srgb, var(--toolbar-bgcolor) 80% /*20*/, transparent) !important;
+}
 
 #searchmode-switcher-icon {
 	opacity: 0.8;
@@ -135,7 +133,7 @@
 }
 
 #nav-bar:-moz-window-inactive {
-	opacity: 0.0 !important;
+	opacity: 1.0 /*0.6*/ !important;
 }
 
 /*
@@ -244,13 +242,13 @@
 }
 
 /* Fix colours */
-/*@media not (-moz-gtk-csd-available) {
+@media not (-moz-gtk-csd-available) {
 	#navigator-toolbox:not(:-moz-lwtheme) {
 		background-color: var(--lwt-accent-color) !important;
 		color: var(--lwt-text-color) !important;
-	}*/
+	}
 
-	/* Force inactive window on default theme */ /*
+	/* Force inactive window on default theme */
 	@media not (-moz-platform: windows-win7) {
 		@media not (-moz-platform: windows-win8) {
 			#navigator-toolbox:-moz-window-inactive:not(:-moz-lwtheme) {
@@ -258,7 +256,7 @@
 			}
 		}
 	}
-}*/
+}
 
 .tab-label-container:not([selected="true"], [multiselected]) {
 	opacity: 1 !important;
