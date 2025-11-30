@@ -27,6 +27,10 @@
       
       modules/gui/app/discord
       modules/gui/app/web-browser/firefox
+      modules/gui/app/graphics/2d-general/gimp
+      modules/gui/app/graphics/2d-general/krita
+      modules/gui/app/graphics/2d-pixel-art/libresprite
+      modules/gui/app/graphics/3d-general/blender
 
       modules/gui/viewer/image/qimgv
 
