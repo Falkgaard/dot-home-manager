@@ -21,7 +21,7 @@
    programs.niri.settings = with config.lib.niri.actions; {
       binds = {
          "Mod+Space".action = toggle-overview;
-         "Mod+Enter".action.spawn = [ "${home.sessionVariables.TERM}" ]; # TODO: Make terminal agnostic?
+         "Mod+Enter".action.spawn = [ "${sessionVariables.TERM}" ]; # TODO: Make terminal agnostic?
 
             #"Mod+Ctrl+r".action ... # TODO: reload config?
          "Mod+Ctrl+x".action = quit;
