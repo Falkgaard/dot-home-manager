@@ -27,15 +27,15 @@
          "Mod+Ctrl+X".action = quit;
          "Mod+Ctrl+W".action = close-window;
          # Runners:
-         "Mod+W".action.spawn = [ "rofi" "-normal-window" "-show" "window" "-display-window" "'Window'" "-yoffset" "4" ];
-         "Mod+R".action.spawn = [ "rofi" "-normal-window" "-show" "run" "-display-run" "'Command'" "-yoffset" "4" ];
-         "Mod+A".action.spawn = [ "rofi" "-normal-window" "-show" "drun" "-display-drun" "'App'" "-yoffset" "4" ];
-         "Mod+C".action.spawn = [ "rofi" "-normal-window" "-show" "calc" "-display-calc" "'Calculate'" "-yoffset" "4" "-calc-error-color" "'#FF0000'" ]; #TODO: Stylix
+         "Mod+W".action.spawn = [ "rofi" "-normal-window" "-show" "window" "-display-window" "Window" "-yoffset" "4" ];
+         "Mod+R".action.spawn = [ "rofi" "-normal-window" "-show" "run" "-display-run" "Command" "-yoffset" "4" ];
+         "Mod+A".action.spawn = [ "rofi" "-normal-window" "-show" "drun" "-display-drun" "App" "-yoffset" "4" ];
+         "Mod+C".action.spawn = [ "rofi" "-normal-window" "-show" "calc" "-display-calc" "Calculate" "-yoffset" "4" "-calc-error-color" "'#FF0000'" ]; #TODO: Stylix
          # Screenshotting:
-         "Mod+S".action.spawn = [ "flameshot" "gui" ];
+         "Mod+S".action.spawn       = [ "flameshot" "gui" ];
          "Mod+Shift+S".action.spawn = [ "flameshot" "full" ];
          # Window fullscreen:
-         "Mod+F".action        = fullscreen-window;
+         "Mod+F".action       = fullscreen-window;
          "Mod+Shift+F".action = toggle-windowed-fullscreen;
          # Window floatiness:
          "Mod+T".action       = toggle-window-floating;
@@ -44,10 +44,10 @@
             # "Mod+M".action ...
             # "Mod+Shift+M".action ...
          # Window focus movement:
-         "Mod+H".action = focus-monitor-previous;
-         "Mod+J".action = focus-window-down-or-column-right;
-         "Mod+K".action = focus-window-up-or-column-left;
-         "Mod+L".action = focus-monitor-next;
+         "Mod+H".action = focus-window-up-or-column-left;
+         "Mod+J".action = focus-monitor-previous;
+         "Mod+K".action = focus-monitor-next;
+         "Mod+L".action = focus-window-down-or-column-right;
          # Window growth:
             # "Mod+Ctrl+H".action = ...;
             # "Mod+Ctrl+J".action = ...;
@@ -127,9 +127,9 @@
          };
       };
       cursor = {
-         hide-after-inactive-ms = 4000;
+         hide-after-inactive-ms = 2000;
          hide-when-typing       = false;
-         size                   = 36;
+         size                   = 24;
          theme                  = "default";
       };
       #animations
@@ -138,13 +138,83 @@
          QT_QPA_PLATFORM = "wayland";
          DISPLAY         = null;
       };
-      #window-rules
+
+      window-rules = [
+         (with config.lib.stylix.colors.withHashtag; {
+            matches = [
+               { is-window-cast-target = true; }
+            ];
+            focus-ring = {
+               active.color   = base08;
+               inactive.color = base09;
+            };
+            geometry-corner-radius = {
+               top-left     = 36;
+               top-right    = 36;
+               bottom-left  = 36;
+               bottom-right = 36;
+            };
+            border.inactive.color = base0A;
+            tab-indicator = {
+               active.color   = base08;
+               inactive.color = base09;
+            };
+         })
+         {
+            matches = [
+               {
+                  app-id     = "";
+                  is-focused = false;
+               }
+            ];
+            opacity                     = 0.85;
+            draw-border-with-background = false;
+         }
+         {
+            matches = [
+               {
+                  app-id     = "";
+                  is-focused = true;
+               }
+            ];
+            opacity                     = 0.95;
+            draw-border-with-background = false;
+         }
+         {
+            matches = [
+               { app-id = "librewolf"; }
+               { app-id = "firefox"; }
+               { app-id = "net.lutris.Lutris"; }
+            ];
+            clip-to-geometry = true;
+         }
+         {
+            matches = [
+               { app-id = "^TkFDialog$"; }
+               { app-id = "^Menu$"; }
+               # { app-id = "^Ardour-\\d+\\.\\d+\\.\\d+$"; }
+               # {
+               #   app-id = "^$";
+               #   title = "^$";
+               # }
+            ];
+            open-floating = true;
+         }
+         {
+            matches = [
+               { app-id = "org.gnome.World.Secrets"; }
+            ];
+            block-out-from = "screencast";
+         }
+      ];
+
       #layer-rules
+
       # (DO-NOT-USE?) xwayland-satellite
 
       layout = {
          background-color = "#AA1111";
-         gaps = 16;
+         gaps = 32;
          #preset-column-widths
          #preset-window-heights
          #always-center-single-column
