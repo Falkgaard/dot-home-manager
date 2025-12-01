@@ -114,16 +114,16 @@
          border = {
             enable   = true;
             width    = 4;
-            active   = "#FFFFFF";
-            inactive = "#000000";
-            urgent   = "#FF0000";
+            active.color   = "#FFFFFF";
+            inactive.color = "#000000";
+            urgent.color   = "#FF0000";
          };
          focus-ring = {
             enable   = true;
             width    = 4;
-            active   = "#66FF66";
-            inactive = "#00AA00";
-            urgent   = "#FF6666";
+            active.color   = "#66FF66";
+            inactive.color = "#00AA00";
+            urgent.color   = "#FF6666";
          };
          shadow = {
             enable             = true;
