@@ -77,7 +77,7 @@
             mode             = {
                width            = 3840;
                height           = 2160;
-               refresh          = 30;
+               refresh          = 30.0;
             };
             backdrop-color   = "#FF00FF";
             background-color = "#00FFFF";
