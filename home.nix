@@ -15,6 +15,134 @@
       TERM   = "kitty";
       WEBKIT_DISABLE_COMPOSITING_MODE = 1; # TEMP
    };
+
+   # TEMP (NOTE: will be refactored into modules/gui/desktop/window-manager/niri)
+   programs.niri.settings = {
+      #binds
+      #switch-events
+      #screenshot-path
+      #hotkey-overlay
+      #config-notification
+      #clipboard
+      #prefer-no-csd
+      #spawn-at-startup
+      #workspaces
+      #overview
+      input = {
+         #mod-key
+         #mod-key-nested
+         focus-follows-mouse = {
+            enable             = true;
+            #max-scroll-amount = "20";
+         };
+         mouse = {
+            enable           = true;
+            left-handed      = false;
+            middle-emulation = false;
+            #natural-scroll
+            #scroll-button
+            #scroll-button-lock
+            #scroll-factor
+            #scroll-method
+            accel-profile    = "flat"; # adaptive|flat
+            accel-speed      = 0;
+         };
+         #warp-mouse-to-focus
+         #workspace-auto-back-and-forth
+         power-key-handling.enable = true;
+         #NOTE: ignoring tablet stuff (for now)
+         #NOTE: ignoring touch & touchpad stuff (for now)
+         #NOTE: ignoring trackball & trackpoint stuff (for now)
+         keyboard = {
+            numlock = false;
+            repeat-delay = 250; # ms
+            repeat-rate  = 35;
+            track-layout = "global"; # global|window
+            #xkb
+         };
+      };
+      outputs = {
+         "eDP-1" = {
+            enable = false;
+            scale  = 1.0;
+         };
+         "HDMI-1" = {
+            enable           = true;
+            focus-at-startup = true;
+            scale            = 1.5;
+            position         = {
+               x                = 0;
+               y                = 0;
+            };
+            mode             = {
+               width            = 3840;
+               height           = 2160;
+               refresh          = 30;
+            };
+            backdrop-color   = "#FF00FF";
+            background-color = "#00FFFF";
+         };
+      };
+      cursor = {
+         hide-after-inactive-ms = 4000;
+         hide-when-typing       = false;
+         size                   = 36;
+         theme                  = "default";
+      };
+      #animations
+      #gestures
+      environment = {
+         QT_QPA_PLATFORM = "wayland";
+         DISPLAY         = null;
+      };
+      #window-rules
+      #layer-rules
+      # (DO-NOT-USE?) xwayland-satellite
+
+      layout = {
+         background-color = "#AA1111";
+         gaps = 16;
+         #preset-column-widths
+         #preset-window-heights
+         #always-center-single-column
+         #center-focused-column
+         #default-column-display
+         #default-column-width
+         #tab-indicator
+         #empty-workspace-above-first
+         #struts
+         border = {
+            enable   = true;
+            width    = 4;
+            active   = "#FFFFFF";
+            inactive = "#000000";
+            urgent   = "#FF0000";
+         };
+         focus-ring = {
+            enable   = true;
+            width    = 4;
+            active   = "#66FF66";
+            inactive = "#00AA00";
+            urgent   = "#FF6666";
+         };
+         shadow = {
+            enable             = true;
+            color              = "#00000070";
+            draw-behind-window = false;
+           #inactive-color     = null;
+            offset             = {
+               x                  = 2.5;
+               y                  = 5.0;
+            };
+            softness           = 30.0;
+            spread             =  5.0;
+         };
+         #insert-hint = {
+         #   enable = true;
+         #   #display = TODO: Figure out <decoration>
+         #};
+      };
+   };
    
    imports = [
       modules/stylix
