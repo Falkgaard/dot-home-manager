@@ -20,46 +20,46 @@
    # TODO: Stylix integration.
    programs.niri.settings = with config.lib.niri.actions; {
       binds = {
-         "Mod+space".action = toggle-overview;
-         "Mod+enter".action.spawn = [ "kitty" ]; # TODO: Make terminal agnostic?
+         "Mod+Space".action = toggle-overview;
+         "Mod+Return".action.spawn = [ "kitty" ]; # TODO: Make terminal agnostic?
 
             #"Mod+Ctrl+r".action ... # TODO: reload config?
-         "Mod+Ctrl+x".action = quit;
-         "Mod+Ctrl+w".action = close-window;
+         "Mod+Ctrl+X".action = quit;
+         "Mod+Ctrl+W".action = close-window;
          # Runners:
-         "Mod+w".action.spawn = [ "rofi" "-normal-window" "-show" "window" "-display-window" "'Window'" "-yoffset" "4" ];
-         "Mod+r".action.spawn = [ "rofi" "-normal-window" "-show" "run" "-display-run" "'Command'" "-yoffset" "4" ];
-         "Mod+a".action.spawn = [ "rofi" "-normal-window" "-show" "drun" "-display-drun" "'App'" "-yoffset" "4" ];
-         "Mod+c".action.spawn = [ "rofi" "-normal-window" "-show" "calc" "-display-calc" "'Calculate'" "-yoffset" "4" "-calc-error-color" "'#FF0000'" ]; #TODO: Stylix
+         "Mod+W".action.spawn = [ "rofi" "-normal-window" "-show" "window" "-display-window" "'Window'" "-yoffset" "4" ];
+         "Mod+R".action.spawn = [ "rofi" "-normal-window" "-show" "run" "-display-run" "'Command'" "-yoffset" "4" ];
+         "Mod+A".action.spawn = [ "rofi" "-normal-window" "-show" "drun" "-display-drun" "'App'" "-yoffset" "4" ];
+         "Mod+C".action.spawn = [ "rofi" "-normal-window" "-show" "calc" "-display-calc" "'Calculate'" "-yoffset" "4" "-calc-error-color" "'#FF0000'" ]; #TODO: Stylix
          # Screenshotting:
-         "Mod+s".action.spawn = [ "flameshot" "gui" ];
-         "Mod+Shift+s".action.spawn = [ "flameshot" "full" ];
+         "Mod+S".action.spawn = [ "flameshot" "gui" ];
+         "Mod+Shift+S".action.spawn = [ "flameshot" "full" ];
          # Window fullscreen:
-         "Mod+f".action        = fullscreen-window;
-         "Mod+Shift+f".action = toggle-windowed-fullscreen;
+         "Mod+F".action        = fullscreen-window;
+         "Mod+Shift+F".action = toggle-windowed-fullscreen;
          # Window floatiness:
-         "Mod+t".action       = toggle-window-floating;
-         "Mod+Shift+t".action = switch-focus-between-floating-and-tiling; # What's the difference?
+         "Mod+T".action       = toggle-window-floating;
+         "Mod+Shift+T".action = switch-focus-between-floating-and-tiling; # What's the difference?
          # Modify gap:
-            # "Mod+m".action ...
-            # "Mod+Shift+m".action ...
+            # "Mod+M".action ...
+            # "Mod+Shift+M".action ...
          # Window focus movement:
-         "Mod+h".action = focus-monitor-previous;
-         "Mod+j".action = focus-window-down-or-column-right;
-         "Mod+k".action = focus-window-up-or-column-left;
-         "Mod+l".action = focus-monitor-next;
+         "Mod+H".action = focus-monitor-previous;
+         "Mod+J".action = focus-window-down-or-column-right;
+         "Mod+K".action = focus-window-up-or-column-left;
+         "Mod+L".action = focus-monitor-next;
          # Window growth:
-            # "Mod+Ctrl+h".action = ...;
-            # "Mod+Ctrl+j".action = ...;
-            # "Mod+Ctrl+k".action = ...;
-            # "Mod+Ctrl+l".action = ...;
+            # "Mod+Ctrl+H".action = ...;
+            # "Mod+Ctrl+J".action = ...;
+            # "Mod+Ctrl+K".action = ...;
+            # "Mod+Ctrl+L".action = ...;
          # Window swapping:
-         "Mod+Shift+h".action = move-window-to-monitor-previous;
-         "Mod+Shift+j".action = swap-window-right;
-         "Mod+Shift+k".action = swap-window-left;
-         "Mod+Shift+l".action = move-window-to-monitor-next;
+         "Mod+Shift+H".action = move-window-to-monitor-previous;
+         "Mod+Shift+J".action = swap-window-right;
+         "Mod+Shift+K".action = swap-window-left;
+         "Mod+Shift+L".action = move-window-to-monitor-next;
          # TODO:
-         #    "Mod+Ctrl+f".action ... toggly-mouse-focus
+         #    "Mod+Ctrl+F".action ... toggly-mouse-focus
          #    screenshot
       };
       #switch-events
