@@ -149,10 +149,10 @@
                inactive.color = base09;
             };
             geometry-corner-radius = {
-               top-left     = 36;
-               top-right    = 36;
-               bottom-left  = 36;
-               bottom-right = 36;
+               top-left     = 36.0;
+               top-right    = 36.0;
+               bottom-left  = 36.0;
+               bottom-right = 36.0;
             };
             border.inactive.color = base0A;
             tab-indicator = {
