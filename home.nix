@@ -20,8 +20,8 @@
    # TODO: Stylix integration.
    programs.niri.settings = with config.lib.niri.actions; {
       binds = {
-         "Mod+Space".action = toggle-overview;
-         "Mod+Enter".action.spawn = [ "kitty" ]; # TODO: Make terminal agnostic?
+         "Mod+space".action = toggle-overview;
+         "Mod+enter".action.spawn = [ "kitty" ]; # TODO: Make terminal agnostic?
 
             #"Mod+Ctrl+r".action ... # TODO: reload config?
          "Mod+Ctrl+x".action = quit;
