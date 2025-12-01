@@ -24,9 +24,13 @@
          url                    = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
          inputs.nixpkgs.follows = "nixpkgs";
       };
+      niri = {
+         url                    = "github:sodiboo/niri-flake";
+         inputs.nixpkgs.follows = "nixpkgs";
+      };
    };
    
-   outputs = { nixpkgs, home-manager, stylix, nvf, nixcord, ... } @ inputs:
+   outputs = { nixpkgs, home-manager, stylix, nvf, nixcord, niri, ... } @ inputs:
    let
       system = "x86_64-linux"; # TODO: Parameterize?
       pkgs   = nixpkgs.legacyPackages.${system};
@@ -38,9 +42,11 @@
          inherit pkgs;
          extraSpecialArgs = { inherit inputs; }; # NOTE: Added for firefox-addons and inputs
          modules = [
+            # TODO: Move these out into module/ config files
             nvf.homeManagerModules.default
             stylix.homeModules.stylix
             nixcord.homeModules.nixcord
+            niri.homeModules.niri
             ./home.nix
             { nixpkgs.config.allowUnfree = true; } # NOTE: Redundant?
          ];
