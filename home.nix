@@ -17,7 +17,7 @@
    };
 
    # TEMP (NOTE: will be refactored into modules/gui/desktop/window-manager/niri)
-   programs.niri.settings = {
+   home.programs.niri.settings = {
       #binds
       #switch-events
       #screenshot-path
