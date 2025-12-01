@@ -17,8 +17,51 @@
    };
 
    # TEMP (NOTE: will be refactored into modules/gui/desktop/window-manager/niri)
-   programs.niri.settings = {
-      #binds
+   # TODO: Stylix integration.
+   programs.niri.settings = with config.lib.niri.actions; {
+      binds = {
+         "Mod+Space".action = toggle-overview;
+         "Mod+Enter".action.spawn = [ "${home.sessionVariables.TERM}" ]; # TODO: Make terminal agnostic?
+
+            #"Mod+Ctrl+r".action ... # TODO: reload config?
+         "Mod+Ctrl+x".action = quit;
+         "Mod+Ctrl+w".action = close-window;
+         # Runners:
+         "Mod+w".action.spawn = [ "rofi" "-normal-window" "-show" "window" "-display-window" "'Window'" "-yoffset" "4" ];
+         "Mod+r".action.spawn = [ "rofi" "-normal-window" "-show" "run" "-display-run" "'Command'" "-yoffset" "4" ];
+         "Mod+a".action.spawn = [ "rofi" "-normal-window" "-show" "drun" "-display-drun" "'App'" "-yoffset" "4" ];
+         "Mod+c".action.spawn = [ "rofi" "-normal-window" "-show" "calc" "-display-calc" "'Calculate'" "-yoffset" "4" "-calc-error-color" "'#FF0000'" ]; #TODO: Stylix
+         # Screenshotting:
+         "Mod+s".action.spawn = [ "flameshot" "gui" ];
+         "Mod+Shift+s".action.spawn = [ "flameshot" "full" ];
+         # Window fullscreen:
+         "Mod+f".action        = fullscreen-window;
+         "Mod+Shift+f".action = toggle-windowed-fullscreen;
+         # Window floatiness:
+         "Mod+t".action       = toggle-window-floating;
+         "Mod+Shift+t".action = switch-focus-between-floating-and-tiling; # What's the difference?
+         # Modify gap:
+            # "Mod+m".action ...
+            # "Mod+Shift+m".action ...
+         # Window focus movement:
+         "Mod+h".action = focus-monitor-previous;
+         "Mod+j".action = focus-window-down-or-column-right;
+         "Mod+k".action = focus-window-up-or-column-left;
+         "Mod+l".action = focus-monitor-next;
+         # Window growth:
+            # "Mod+Ctrl+h".action = ...;
+            # "Mod+Ctrl+j".action = ...;
+            # "Mod+Ctrl+k".action = ...;
+            # "Mod+Ctrl+l".action = ...;
+         # Window swapping:
+         "Mod+Shift+h".action = move-window-to-monitor-previous;
+         "Mod+Shift+j".action = swap-window-right;
+         "Mod+Shift+k".action = swap-window-left;
+         "Mod+Shift+l".action = move-window-to-monitor-next;
+         # TODO:
+         #    "Mod+Ctrl+f".action ... toggly-mouse-focus
+         #    screenshot
+      };
       #switch-events
       #screenshot-path
       #hotkey-overlay
